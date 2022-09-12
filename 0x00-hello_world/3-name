@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -o 3-name/n
+gcc $CFILE -o 3-name
