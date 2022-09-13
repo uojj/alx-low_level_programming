@@ -12,18 +12,13 @@ int main(void)
   
 {
   
-  char alphabet;
+  char i;
+  char j;
     
-  for (alphabet = 'a'; alphabet <= 'z' ; alphabet++)
-    
-    {
-      
-     putchar(alphabet);
-            
-    }
-    
+  for (i = 'a'; i <= 'z'; i++)
+    putchar(i);
+  for (j = 'A'; j = 'Z'; j++)
+    putchar(j);
   putchar('\n');
-  
   return (0);
-  
 }
