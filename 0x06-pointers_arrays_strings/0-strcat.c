@@ -1,20 +1,34 @@
 #include "main.h"
-
 /**
- * _memset - Entry point
- * @s: pointed destination
- * @b: constant byte
- * @n: bytes
- * Return: Always 0 (Success)
+ * _strcat - concatenates two strings
+ * @dest: A pointer to a character that will be changed
+ * @src: A pointer to a character that will also be changed
+ * Return: dest
  */
 
-char *_memset(char *s, char b, unsigned int n)
+char *_strcat(char *dest, char *src)
 {
-  unsigned int i;
+  int i;
+  int j;
 
-  for (i = 0; i < n; i++)
+  i = 0;
+
+  while (dest[i] != '\0')
+    {
+      i++;
+    }
     
-    s[i] = b;
+  j = 0;
 
-  return (s);
+  while (src[j] != '\0')
 
+    {
+      dest[i] = src[j];
+      j++;
+      i++;
+    }
+
+  dest[i] = '\0';
+
+  return (dest);
+}
