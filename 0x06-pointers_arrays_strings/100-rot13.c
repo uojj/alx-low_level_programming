@@ -1,60 +1,34 @@
 #include "main.h"
+
 /**
-* rot13 - Encodes a string using rot13.
-* @str: the string to be encoded.
-*
-* Return: A pointer to the encoded string.
-*/
-char *rot13(char *str)
-{
-  int indx1 = 0, indx2;
-  char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-      
-		       'G', 'H', 'I', 'J', 'K', 'L',
-		       
-		       'M', 'N', 'O', 'P', 'Q', 'R',
-		       
-		       'S', 'T', 'U', 'V', 'W', 'X',
-		       
-		       'Y', 'Z', 'a', 'b', 'c', 'd',
-		       
-		       'e', 'f', 'g', 'h', 'i', 'j',
-		       
-		       'k', 'l', 'm', 'n', 'o', 'p',
-		       
-		       'q', 'r', 's', 't', 'u', 'v',
-		       
-		       'w', 'x', 'y', 'z'};
+ * rot13 - Encodes a string using rot13.
+ * @s: the string to be encoded.
+ *
+ * Return: A pointer to the encoded string.
+ */
+
+char *rot13(char *s)
   
-  char rot13key[52] = {'N', 'O', 'P', 'Q', 'S',
-		       
-		       'T', 'U', 'V', 'W', 'X', 'Y',
-		       
-		       'Z', 'A', 'B', 'C', 'D', 'E',
-		       
-		       'F', 'G', 'H', 'I', 'J', 'K',
-		       
-		       'L', 'M', 'n', 'o', 'p', 'q',
-		       
-		       'r', 's', 't', 'u', 'v', 'w',
-		       
-		       'x', 'y', 'z', 'a', 'b', 'c',
-		       
-		       'd', 'e', 'f', 'g', 'h', 'i';
-		       
-		       'j', 'k', 'l', 'm'};
+{  
+  int i, j;
   
-  while (str[indx1])
+  char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  
+  char r[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+    
+  for (i = 0; s[i] != '\0'; i++)
     {
-      for (indx2 = 0; indx2 < 52; indx2++)
+      
+      for (j = 0; a[j] != '\0'; j++)
 	{
-	  if (str[indx1] == alphabet[indx2])
+	
+	  if (s[i] == a[j])
 	    {
-	      str[indx1] = rot13key[indx2];
+	      s[i] = r[j];
 	      break;
 	    }
 	}
-      indx1++
-	}
-  return (str);
+    }
+
+  return (s);
 }
