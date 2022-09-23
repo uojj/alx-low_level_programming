@@ -1,26 +1,20 @@
 #include "main.h"
+
 /**
-* _strcat - concatenates two strings
-* @dest: A pointer to a character that will be changed
-* @src: A pointer to a character that will also be changed
-* Return: dest
-*/
-char *_strcat(char *dest, char *src)
+ * _memset - Entry point
+ * @s: pointed destination
+ * @b: constant byte
+ * @n: bytes
+ * Return: Always 0 (Success)
+ */
+
+char *_memset(char *s, char b, unsigned int n)
 {
-  int i;
-  int j;
-  i = 0;
-  while (dest[i] != '\0')
-    {
-      i++;
-    }
-  j = 0;
-  while (src[j] != '\0')
-    {
-      dest[i] = src[j];
-      j++;
-      i++;
-    }
-  dest[i] = '\0';
-  return (dest);
-}
+  unsigned int i;
+
+  for (i = 0; i < n; i++)
+    
+    s[i] = b;
+
+  return (s);
+
